@@ -6,7 +6,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1.62427, -0.926422, 0, 0, 0, 0, 478.708, -0.813744, 0, 0, 0, 0, 478.708, 53.3629, 0, 0, 0, 0, -0.263428, 55.706, 0, 0, 0, 0, 1.62427, -0.926422 )
+"points": PoolVector2Array( 0, 0, 0, 0, 3.78162, 721.705, 0, 0, 0, 0, 479.157, 720.649, 0, 0, 0, 0, 480.279, 753.761, 0, 0, 0, 0, 1.26178, 754.463, 0, 0, 0, 0, 0, 722 )
 }
 
 [node name="Main" type="Node"]
@@ -16,7 +16,7 @@ Mob = ExtResource( 3 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
 [node name="MobTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.107
 
 [node name="ScoreTimer" type="Timer" parent="."]
 

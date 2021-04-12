@@ -37,11 +37,11 @@ func _on_MobTimer_timeout():
 	var mob = Mob.instance()
 	add_child(mob)
 	# Set the mob's direction perpendicular to the path direction.
-	var direction = PI / 2 #$MobPath/MobSpawnLocation.rotation + PI / 2
+	var direction = 3 * PI / 2 #$MobPath/MobSpawnLocation.rotation + PI / 2
 	# Set the mob's position to a random location.
 	mob.position = $MobPath/MobSpawnLocation.position
 	# Add some randomness to the direction.
-	mob.rotation =  PI / 2
+	mob.rotation =  3 * PI / 2
 	# Set the velocity (speed & direction).
 	mob.linear_velocity = Vector2(300, 0)
 	mob.linear_velocity = mob.linear_velocity.rotated(direction)

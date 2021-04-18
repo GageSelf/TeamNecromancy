@@ -64,3 +64,10 @@ func _on_ObstacleTimer_timeout():
 	
 	obstacle.linear_velocity = Vector2(500,0)
 	obstacle.linear_velocity = obstacle.linear_velocity.rotated(direction)
+
+
+func _on_Player_EndGame():
+	$ScoreTimer.stop()
+	$MobTimer.stop()
+	$ObstacleTimer.stop()
+	$Player.hide()

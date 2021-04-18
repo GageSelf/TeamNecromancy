@@ -8,9 +8,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "Up",
+"name": "Left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
@@ -18,14 +18,14 @@ animations = [ {
 "name": "Right",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Up",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "Left",
 "speed": 5.0
 } ]
 
@@ -47,4 +47,5 @@ animation = "Down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+[connection signal="EndGame" from="." to="." method="_on_Player_EndGame"]
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]

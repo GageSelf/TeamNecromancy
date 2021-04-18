@@ -1,8 +1,9 @@
 extends Area2D
-signal hit
+#signal hit
 
 export var speed = 400
 var screen_size
+var score = 0
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,13 +18,19 @@ func _ready():
 func _process(delta):
 	var velocity = Vector2()  # The player's movement vector.
 	if Input.is_action_pressed("ui_right"):
+		$AnimatedSprite.flip_h = false
 		velocity.x += 1
+		$AnimatedSprite.animation = "Right"
 	if Input.is_action_pressed("ui_left"):
+		$AnimatedSprite.flip_h = true
 		velocity.x -= 1
+		$AnimatedSprite.animation = "Right"
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
+		$AnimatedSprite.animation = "Down"
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
+		$AnimatedSprite.animation = "Up"
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite.play()
@@ -34,23 +41,20 @@ func _process(delta):
 	position.x = clamp(position.x, 30, 450)
 	position.y = clamp(position.y, 50, 200)
 	
-	if velocity.x != 0:
-		$AnimatedSprite.animation = "Walk"
-		$AnimatedSprite.flip_v = true
-		# See the note below about boolean assignment
-		$AnimatedSprite.flip_h = velocity.x < 0
-	elif velocity.y != 0:
-		$AnimatedSprite.animation = "Up"
-		$AnimatedSprite.flip_v = true
+	
 
 
 func _on_Player_body_entered(body):
-	hide()
-	emit_signal("hit")
-	$CollisionShape2D.set_deferred("disabled", true)
+	if body.is_in_group("Bad"):
+		hide()
+	if body.is_in_group("Good"):
+		score += 1
+	#score += 1
+	#print(score)
+	#emit_signal("hit")
+	#$CollisionShape2D.set_deferred("disabled", true)
 	
 func start(pos):
 	position = pos
-	$AnimatedSprite.flip_v = true
 	show()
 	$CollisionShape2D.disabled = false

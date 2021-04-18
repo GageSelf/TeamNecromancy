@@ -1,7 +1,8 @@
 extends Node
 
 export (PackedScene) var Mob
-var score
+export (PackedScene) var Obstacle
+export var score = 0
 
 func _ready():
 	randomize()
@@ -15,6 +16,7 @@ func _ready():
 func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	$ObstacleTimer.stop()
 
 
 func new_game():
@@ -24,11 +26,13 @@ func new_game():
 
 func _on_StartTimer_timeout():
 	$MobTimer.start()
-	$ScoreTimer.start() # Replace with function body.
+	$ScoreTimer.start() 
+	$ObstacleTimer.start()
 
 
 func _on_ScoreTimer_timeout():
-	score += 1 # Replace with function body.
+	score += 1 
+	#print(score)
 
 
 func _on_MobTimer_timeout():
@@ -41,7 +45,22 @@ func _on_MobTimer_timeout():
 	# Set the mob's position to a random location.
 	mob.position = $MobPath/MobSpawnLocation.position
 	# Add some randomness to the direction.
-	mob.rotation =  3 * PI / 2
+	mob.rotation =  0
 	# Set the velocity (speed & direction).
-	mob.linear_velocity = Vector2(300, 0)
+	mob.linear_velocity = Vector2(500, 0)
 	mob.linear_velocity = mob.linear_velocity.rotated(direction)
+	
+func _on_ObstacleTimer_timeout():
+	$ObstaclePath/ObstacleSpawnLocation.offset = randi()
+	
+	var obstacle = Obstacle.instance()
+	add_child(obstacle)
+	
+	var direction = 3*PI/2
+	
+	obstacle.position = $ObstaclePath/ObstacleSpawnLocation.position
+	
+	obstacle.rotation = 0
+	
+	obstacle.linear_velocity = Vector2(500,0)
+	obstacle.linear_velocity = obstacle.linear_velocity.rotated(direction)

@@ -1,4 +1,5 @@
 extends Area2D
+signal EndGame
 #signal hit
 
 export var speed = 400
@@ -46,7 +47,8 @@ func _process(delta):
 
 func _on_Player_body_entered(body):
 	if body.is_in_group("Bad"):
-		hide()
+		emit_signal("EndGame")
+		$CollisionShape2D.set_deferred("disabled", true)
 	if body.is_in_group("Good"):
 		score += 1
 	#score += 1
@@ -58,3 +60,4 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+

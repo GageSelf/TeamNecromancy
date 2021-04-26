@@ -42,13 +42,17 @@ func _on_ScoreTimer_timeout():
 	
 	#print($MobPath/MobSpawnLocation.position.x, " ", $ObstaclePath/ObstacleSpawnLocation.position.x)
 	
-	if(abs($MobPath/MobSpawnLocation.position.x - $ObstaclePath/ObstacleSpawnLocation.position.x) <= 100):
-		if($MobPath/MobSpawnLocation.position.x >= 100):
+	if(abs($MobPath/MobSpawnLocation.position.x - $ObstaclePath/ObstacleSpawnLocation.position.x) <= 115):
+		if($MobPath/MobSpawnLocation.position.x >= 150 and $MobPath/MobSpawnLocation.position.x <= 390):
 			$MobPath/MobSpawnLocation.position.x = $MobPath/MobSpawnLocation.position.x*2
+			
 			if($MobPath/MobSpawnLocation.position.x > 480):
-				$MobPath/MobSpawnLocation.position.x = ($MobPath/MobSpawnLocation.position.x - 480) / 2
-		else:
-			$MobPath/MobSpawnLocation.position.x += 75
+				$MobPath/MobSpawnLocation.position.x = ($MobPath/MobSpawnLocation.position.x - 480)
+		elif($MobPath/MobSpawnLocation.position.x < 150):
+			$MobPath/MobSpawnLocation.position.x = $MobPath/MobSpawnLocation.position.x + 200
+			
+		elif($MobPath/MobSpawnLocation.position.x > 390):
+			$MobPath/MobSpawnLocation.position.x = $MobPath/MobSpawnLocation.position.x - 150
 
 
 

@@ -7,7 +7,7 @@ func _ready():
 	defaultX = position.y
 	pass # Replace with function body.
 
-func _process(_delta):
+func _process(delta):
 	if position.y < -81:
 		position.y = 0
 	position.y -= 3; #Speed

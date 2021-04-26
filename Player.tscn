@@ -30,18 +30,18 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 26.75
-height = 14.0
+radius = 17.8708
+height = 21.6795
 
 [node name="Player" type="Area2D"]
-position = Vector2( 221.123, 131.895 )
+position = Vector2( 221.123, 130.95 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "Down"
 

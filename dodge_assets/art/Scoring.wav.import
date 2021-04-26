@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Scoring.wav-71fd47e7dff743e906b8c85bae556fcb.sample"
+
+[deps]
+
+source_file="res://dodge_assets/art/Scoring.wav"
+dest_files=[ "res://.import/Scoring.wav-71fd47e7dff743e906b8c85bae556fcb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

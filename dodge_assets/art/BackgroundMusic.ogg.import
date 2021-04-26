@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BackgroundMusic.ogg-001150ebfc9ea25c9a152899a6de1068.oggstr"
+
+[deps]
+
+source_file="res://dodge_assets/art/BackgroundMusic.ogg"
+dest_files=[ "res://.import/BackgroundMusic.ogg-001150ebfc9ea25c9a152899a6de1068.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

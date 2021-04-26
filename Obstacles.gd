@@ -12,6 +12,7 @@ func _ready():
 	else:
 		$AnimatedSprite/AnimationPlayer.play("Default")
 
+
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 

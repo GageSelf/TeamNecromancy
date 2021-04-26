@@ -2,7 +2,6 @@ extends Node
 
 export (PackedScene) var Mob
 export (PackedScene) var Obstacle
-export (PackedScene) var Obstacle2
 export var score = 0
 
 func _ready():
@@ -12,7 +11,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	passMob
-
 
 
 func game_over():
@@ -30,11 +28,6 @@ func _on_StartTimer_timeout():
 	$MobTimer.start()
 	$ScoreTimer.start() 
 	$ObstacleTimer.start()
-	
-	
-	
-	
-	
 
 
 func _on_ScoreTimer_timeout():
@@ -71,12 +64,10 @@ func _on_MobTimer_timeout():
 	mob.linear_velocity = Vector2(500, 0)
 	mob.linear_velocity = mob.linear_velocity.rotated(direction)
 	
-	
-	
 func _on_ObstacleTimer_timeout():
 	$ObstaclePath/ObstacleSpawnLocation.offset = randi()
-	var obstacle = Obstacle.instance()
 	
+	var obstacle = Obstacle.instance()
 	add_child(obstacle)
 	
 	var direction = 3*PI/2
@@ -90,6 +81,7 @@ func _on_ObstacleTimer_timeout():
 
 
 func _on_Player_EndGame():
+	$Stop.play()
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$ObstacleTimer.stop()

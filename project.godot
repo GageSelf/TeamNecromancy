@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Game3"
+config/name="EndlessHills"
 run/main_scene="res://StartScreen.tscn"
 config/icon="res://dodge_assets/art/Skiman.png"
 

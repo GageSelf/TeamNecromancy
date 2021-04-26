@@ -102,7 +102,7 @@ __meta__ = {
 
 [node name="ScoreSound" type="AudioStreamPlayer" parent="UI Layer/Score"]
 stream = ExtResource( 10 )
-volume_db = 1.0
+volume_db = 4.0
 
 [node name="Stop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
@@ -110,7 +110,7 @@ volume_db = 1.0
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = 1.0
+volume_db = -5.0
 autoplay = true
 [connection signal="EndGame" from="Player" to="." method="_on_Player_EndGame"]
 [connection signal="score" from="Player" to="UI Layer/Score" method="_on_Player_score"]

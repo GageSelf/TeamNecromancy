@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://dodge_assets/art/Background.png" type="Texture" id=6]
 [ext_resource path="res://Score.gd" type="Script" id=7]
 [ext_resource path="res://dodge_assets/fonts/DotGothic16-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://dodge_assets/art/stop.wav" type="AudioStream" id=9]
+[ext_resource path="res://dodge_assets/art/Scoring.wav" type="AudioStream" id=10]
+[ext_resource path="res://dodge_assets/art/BackgroundMusic.ogg" type="AudioStream" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -92,6 +95,19 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="UI Layer/Score"]
+stream = ExtResource( 10 )
+volume_db = 1.0
+
+[node name="Stop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = 1.0
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = 1.0
+autoplay = true
 [connection signal="EndGame" from="Player" to="." method="_on_Player_EndGame"]
 [connection signal="score" from="Player" to="UI Layer/Score" method="_on_Player_score"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]

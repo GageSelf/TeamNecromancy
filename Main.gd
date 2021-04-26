@@ -86,3 +86,4 @@ func _on_Player_EndGame():
 	$MobTimer.stop()
 	$ObstacleTimer.stop()
 	$Player.hide()
+	$DeathOverlay.show()

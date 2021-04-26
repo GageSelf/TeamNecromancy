@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://dodge_assets/art/stop.wav" type="AudioStream" id=9]
 [ext_resource path="res://dodge_assets/art/Scoring.wav" type="AudioStream" id=10]
 [ext_resource path="res://dodge_assets/art/BackgroundMusic.ogg" type="AudioStream" id=11]
+[ext_resource path="res://DeathOverlay.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -73,6 +74,9 @@ texture = ExtResource( 6 )
 region_enabled = true
 region_rect = Rect2( -0.948044, -2.85974, 501.874, 1802.37 )
 script = ExtResource( 4 )
+
+[node name="DeathOverlay" parent="." instance=ExtResource( 12 )]
+visible = false
 
 [node name="UI Layer" type="Control" parent="."]
 margin_left = 220.472

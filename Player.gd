@@ -42,7 +42,7 @@ func _process(delta):
 		$AnimatedSprite.animation = "Down"
 
 
-	velocity.y = clamp(velocity.y, -150, 400)	
+	velocity.y = clamp(velocity.y, -250, 400)	
 
 		
 	position += velocity * delta

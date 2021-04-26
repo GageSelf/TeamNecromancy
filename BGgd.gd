@@ -10,4 +10,4 @@ func _ready():
 func _process(delta):
 	if position.y < -81:
 		position.y = 0
-	position.y -= 3; #Speed
+	position.y -= 477.5 * delta; #Speed

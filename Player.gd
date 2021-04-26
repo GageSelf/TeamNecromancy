@@ -24,7 +24,9 @@ func _ready():
 	
 
 func _process(delta):
-	var target = get_global_mouse_position() #This is for mouse
+
+	target = get_global_mouse_position() #This is for mouse
+
 	var distance = target.distance_to(position)
 	
 	if distance < 100:
@@ -38,6 +40,10 @@ func _process(delta):
 		$AnimatedSprite.animation = "Left"
 	else:
 		$AnimatedSprite.animation = "Down"
+
+
+	velocity.y = clamp(velocity.y, -150, 400)	
+
 		
 	position += velocity * delta
 	position.x = clamp(position.x, 30, 450)

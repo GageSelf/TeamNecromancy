@@ -33,7 +33,7 @@ gravity_scale = 0.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 30, 0 )
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "swim"
 
@@ -47,6 +47,6 @@ position = Vector2( 0, -1.23743 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -30, 0 )
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 flip_h = true
